@@ -1,1 +1,10 @@
-<p>{{ post.content|truncatewords:20 }}</p>
+{% extends "base.html" %}
+
+{% block content %}
+    {% for article in articles %}
+        <h2><a href="{% url 'article-detail' article.id %}" >{{ article.title }}</a></h2>
+        <p>{{ article.content|truncatewords:20 }}</p>
+        <p>{{ article.publish_date }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

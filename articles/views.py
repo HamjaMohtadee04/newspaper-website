@@ -24,4 +24,8 @@ def article_detail_view(request, article_id):
     comments = Comment.objects.filter(article_id=article_id).select_related("user")
 
     context = {"article": article, "comments": comments}
-    return render(request, "article_detail.html", context)    
+    return render(request, "article_detail.html", context) 
+
+def AboutUs_view(request):
+    return render(request, "AboutUs.html")
+    

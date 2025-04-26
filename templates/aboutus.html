@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>John Doe</h1>
+        <h2>Software Engineer</h2>
+    </header>
+
+    <div class="bio">
+        <p>
+            Hello! I'm John Doe, a passionate software engineer with a degree from a reputed university.
+            I've worked at multiple companies, contributing to innovative projects and scalable software solutions.
+            I enjoy building applications, solving complex problems, and continuously learning new technologies.
+        </p>
+    </div>
+
+    <div class="social-links">
+        <a href="https://x.com/johndoe" target="_blank" title="X / Twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://instagram.com/johndoe" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/johndoe" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://youtube.com/johndoe" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2025 John Doe. All rights reserved.
+    </footer>
+{% endblock %}

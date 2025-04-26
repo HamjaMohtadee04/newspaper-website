@@ -17,8 +17,9 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include,path
-from articles.views import article_list_view,article_detail_view
+from articles.views import article_list_view,article_detail_view,AboutUs_view
 from articles.views import home_view
+
 
 if settings.DEBUG:
     import debug_toolbar
@@ -28,5 +29,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("articles/", article_list_view, name="article-list"),
     path("articles/<int:article_id>", article_detail_view, name="article-detail"),
+    path("aboutus/", AboutUs_view, name="aboutus"),
+    path("__debug__/", include(debug_toolbar.urls)),
+    path("users/", include("users.urls")),
 ]
 
