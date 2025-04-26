@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
-from .models import Article
+from .models import Comment, Article
 
 
 def home_view(request):
@@ -18,3 +18,10 @@ def article_list_view(request):
     article = Article.objects.all()
     context = {"articles": article}
     return render(request, "article_list.html", context)
+
+def article_detail_view(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    comments = Comment.objects.filter(article_id=article_id).select_related("user")
+
+    context = {"article": article, "comments": comments}
+    return render(request, "article_detail.html", context)    
